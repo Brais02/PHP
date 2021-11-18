@@ -28,8 +28,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         //$target_dir = __Dir__ . "/files/";
         if (isset($_POST["submit"])) {
             foreach ($_FILES as $key => $valor) {
-                /* var_dump($key);
-                  var_dump($valor); */
                 $error = $valor["error"];
 
                 switch ($error) {
@@ -43,30 +41,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
                         }
                         //move_uploaded_file($_FILES["archivo"]["tmp_name"], $target_dir .$_FILES["archivo"]["name"]);
                         //rename($_FILES["archivo"]["tmp_name"], $target_dir . $_FILES["archivo"]["name"]);
-                        break;
-                        
-                    case 1:
-                        echo "Error al subir el archivo: " . $name . ", por culpa del servidor!";
-                        break;
-                    
-                    case 2:
-                        echo "Error al mover el archivo: " . $name . ", por culpa del formulario!";
-                        break;
-                
-                    case 4:
-                        echo "Error, no se ha subido ningun archivo!";
-                        break;
-                 
-                    case 6:
-                        echo "Error al acceder al directorio con el archivo: " . $name . "!";
-                        break;
-                    
-                    case 7:
-                        echo "Error el archivo: " . $name . " np se ha podido escribir en el disco!";
-                        break;
-                    
-                    case 8:
-                        echo "Error el archivo: " . $name . " no se ha subido por un fallo en PHP!";
                         break;
                     
                     default:
@@ -86,6 +60,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
           //move_uploaded_file($_FILES["archivo"]["tmp_name"], $target_dir .$_FILES["archivo"]["name"]);
           //rename($_FILES["archivo"]["tmp_name"], $target_dir . $_FILES["archivo"]["name"]);
           break;
+          
           default:
           echo "Algo ha salido mal <br>";
           break;
